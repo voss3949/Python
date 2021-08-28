@@ -1,4 +1,4 @@
 import random
 
 t = [1,2,3]
-randome.choice(t)
+random.choice(t)
