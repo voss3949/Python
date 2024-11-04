@@ -1,10 +1,15 @@
-from flask import Flask
-app = Flask(__name__)
+import os
+from flask import Flask, render_template
+
+template_dir = os.path.abspath('C:/Users/12245/OneDrive/Documents/Python_Projects/MyDashboard/')
+
+app = Flask(__name__, template_folder=template_dir)
+Name = 'Joshua'
 
 @app.route("/")
-def hello():
-	return '<html><body><h1>Hello World!!!</h1></body></html>'
+def homepage():
+    return render_template("index.html", name=Name)
+
 
 if __name__ == "__main__":
-	app.run()
-
+	app.run(port=5000)
